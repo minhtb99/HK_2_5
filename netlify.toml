@@ -1,0 +1,14 @@
+[build]
+  publish = "main/html"
+
+[build.environment]
+  SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"
+
+[[edge_functions]]
+  path = "/*"
+  function = "bot-blocker"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
